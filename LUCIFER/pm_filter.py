@@ -1330,7 +1330,7 @@ async def advantage_spell_chok(msg):
         caption=(script.CUDNT_FND),
     )
     await asyncio.sleep(5)
-    await spl1.edit("<b>I Cᴏᴜʟᴅɴ'ᴛ Fɪɴᴅ Aɴʏᴛʜɪɴɢ Rᴇʟᴀᴛᴇᴅ ᴛᴏ Tʜᴀᴛ\nDɪᴅ Yᴏᴜ Mᴇᴀɴ Aɴʏ Oɴᴇ ᴏғ Tʜᴇsᴇ ?</b>",
+    await spl1.edit("<b>🤧 Don't message me ❌</b>",
     )
     await asyncio.sleep(SPL_DELETE_TIME)
     await spl1.delete()
