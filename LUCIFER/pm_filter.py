@@ -1280,11 +1280,7 @@ async def advantage_spell_chok(msg):
     g_s = await search_gagala(query)
     g_s += await search_gagala(msg.text)
     gs_parsed = []
-    if not g_s:
-        btn = [[
-            InlineKeyboardButton(' Search on Google ', url=f"https://google.com/search?q={search}"),
-            InlineKeyboardButton('Search on IMDB', url=f"https://imdb.com/find?q={search}")
-        ]]           
+    if not g_s:         
         k = await msg.reply_photo(photo=SPELL_IMG, caption=script.I_CUDNT, reply_markup=InlineKeyboardMarkup(btn))    
         await asyncio.sleep(SPL_DELETE_TIME)
         await k.delete()
@@ -1314,27 +1310,14 @@ async def advantage_spell_chok(msg):
                 movielist += [movie.get('title') for movie in imdb_s]
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
-    if not movielist:
-        btn = [[
-            InlineKeyboardButton(' ɢᴏᴏɢʟᴇ ', url=f"https://google.com/search?q={search}"),
-            InlineKeyboardButton('ɪɴsᴛʀᴜᴄᴛɪᴏɴs', callback_data='splmd')
-        ]]           
-        k = await msg.reply_photo(photo=SPELL_IMG, caption=script.CUDNT_FND, reply_markup=InlineKeyboardMarkup(btn))    
+    if not movielist:          
+        k = await msg.reply_photo(photo=SPELL_IMG, caption=script.CUDNT_FND)    
         await asyncio.sleep(SPL_DELETE_TIME)
         await k.delete()
         await msg.delete()
         return
     SPELL_CHECK[msg.id] = movielist
-    btn = [[
-        InlineKeyboardButton(
-            text="ɪɴsᴛʀᴜᴄᴛɪᴏɴs",
-            callback_data="splmd"
-        ),
-        InlineKeyboardButton(
-            text="ɢᴏᴏɢʟᴇ",
-            url=f"https://google.com/search?q={search}"
-        )
-    ]]
+
     btn2 = [[
         InlineKeyboardButton(
             text=movie.strip(),
@@ -1345,11 +1328,9 @@ async def advantage_spell_chok(msg):
     spl1 = await msg.reply_photo(
         photo=(SPELL_IMG),
         caption=(script.CUDNT_FND),
-        reply_markup=InlineKeyboardMarkup(btn)
     )
     await asyncio.sleep(5)
     await spl1.edit("<b>I Cᴏᴜʟᴅɴ'ᴛ Fɪɴᴅ Aɴʏᴛʜɪɴɢ Rᴇʟᴀᴛᴇᴅ ᴛᴏ Tʜᴀᴛ\nDɪᴅ Yᴏᴜ Mᴇᴀɴ Aɴʏ Oɴᴇ ᴏғ Tʜᴇsᴇ ?</b>",
-        reply_markup=InlineKeyboardMarkup(btn2)
     )
     await asyncio.sleep(SPL_DELETE_TIME)
     await spl1.delete()
