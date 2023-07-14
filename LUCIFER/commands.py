@@ -22,7 +22,7 @@ BATCH_FILES = {}
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[
-                    InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url='https://t.me/+Da8va-AoDRA4Y2E1')
                   ],[
                     InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/The_Silent_Teams'),
                     InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ', url='https://t.me/+FdummGOQm3NlMDBl')
@@ -45,7 +45,7 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-                    InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('➕ 𝐎𝐰𝐧𝐞𝐫 ➕', url='https://t.me/Robo_5_0')
                   ],[
                     InlineKeyboardButton('🎭 ᴍʏ ɢʀᴏᴜᴘ 🎭 ', url='https://t.me/+Da8va-AoDRA4Y2E1'),
                     InlineKeyboardButton('☘️ Sᴜᴘᴘᴏʀᴛ ☘️', url='https://t.me/+FdummGOQm3NlMDBl')
@@ -94,7 +94,7 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-                    InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('➕ 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 ➕', url='https://t.me/Robo_5_0')
                   ],[
                     InlineKeyboardButton('🍁 Oᴡɴᴇʀ', callback_data="owner_info"),
                     InlineKeyboardButton('🌿 Sᴜᴘᴘᴏʀᴛ', callback_data="https://t.me/+FdummGOQm3NlMDBl")
